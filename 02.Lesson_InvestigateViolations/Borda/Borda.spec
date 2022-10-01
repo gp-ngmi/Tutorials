@@ -34,6 +34,10 @@ rule correctPointsIncreaseToContenders(address first, address second, address th
 
     vote(e, first, second, third);
     
+    uint256 firstPointsAfter = getPointsOfContender(e, first);
+    uint256 secondPointsAfter = getPointsOfContender(e, second);
+    uint256 thirdPointsAfter = getPointsOfContender(e, third);
+
     assert (getPointsOfContender(e, first) - firstPointsBefore == 3, "first choice receieved other amount than 3 points");
     assert (getPointsOfContender(e, second) - secondPointsBefore == 2, "second choice receieved other amount than 2 points");
     assert (getPointsOfContender(e, third) - thirdPointsBefore == 1, "third choice receieved other amount than 1 points");
